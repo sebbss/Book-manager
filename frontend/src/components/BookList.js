@@ -27,15 +27,16 @@ class BookList extends Component {
 
     render() {
         const {books, loading} = this.state
+        console.log(books)
 
         return (
             <div className='container'>
-                {loading ? (<h1>Loading .....</h1>) 
-                :(<div className='row align-items-center'>
-                    {books.map(book =>(
-                        <div key={book.pk} className='col-4'><Card name={book.name} /></div>
-                    ))}
-                </div>)}
+                <div className='row align-items-center'>
+                {books.map(book =>(
+                    <div key={book.pk} className='col-4'><Card name={book.name} book={book.pk} /></div>
+                    
+                ))}
+                </div>
             </div>
         )
     }
