@@ -20,3 +20,5 @@ class Author(models.Model):
         author = self.model(first_name=first_name, last_name=last_name)
         author.save()
         return author
+
+        

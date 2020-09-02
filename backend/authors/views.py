@@ -11,7 +11,6 @@ from .serializers import AuthorSerializer
 class AuthorListView(generics.ListCreateAPIView):
     serializer_class = (AuthorSerializer)
 
-
     def list(self, request):
         authors = Author.objects.all()
         serializer = self.serializer_class(authors, many=True)
@@ -19,7 +18,6 @@ class AuthorListView(generics.ListCreateAPIView):
 
     def post(self, request):
         data = request.data
-        print(data,  "------------------------------------")
         serializer = self.serializer_class(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -28,6 +26,9 @@ class AuthorListView(generics.ListCreateAPIView):
 
 class AuthorDetailView(generics.RetrieveUpdateAPIView):
     serializer_class = AuthorSerializer
+    http_method_names = ['get', 'put']
+
+
 
     def get(self, request, author_id):
         queryset = get_object_or_404(Author, pk=author_id)
