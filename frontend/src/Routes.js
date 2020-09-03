@@ -7,6 +7,7 @@ import BookList from './components/BookList';
 import BookDetail from './components/BookDetail';
 import NavBar  from './components/NavBar';
 import CreateBook from './components/CreateBook'
+import UpdateBook from './components/UpdateBook'
 
 
 export class Routes extends Component {
@@ -16,7 +17,9 @@ export class Routes extends Component {
           <div>
             <NavBar/>
             <Switch>
+
               <Route path="/add-book" component={CreateBook}/>
+              <Route path="/update/:id" component={UpdateBook}/>
               <Route path="/:id" component={BookDetail} />
               <Route exact path="/" component={BookList} />
             </Switch>

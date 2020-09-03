@@ -1,12 +1,12 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
 
-const BookForm = ({ name, isbn, author, onChange, onSubmit }) => (
+const BookForm = ({ name, isbn, author, onChange, onSubmit, Action }) => (
   <MDBContainer>
     <MDBRow>
       <MDBCol className="container fls" md="4" >
         <form onSubmit={onSubmit} className="mt-4 border border-primary rounded p-4">
-          <p className="h4 text-center mb-4">New book</p>
+<p className="h4 text-center mb-4">{Action}</p>
 
           <label htmlFor="defaultFormBookNameEx" className="grey-text">
             Book Name
@@ -36,7 +36,7 @@ const BookForm = ({ name, isbn, author, onChange, onSubmit }) => (
           <br/>
 
           <label htmlFor="defaultFormISBNEx" className="grey-text">
-            Your isbn
+            ISBN
           </label>
           <input
             type="text"

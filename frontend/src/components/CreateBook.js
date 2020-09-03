@@ -68,6 +68,7 @@ export class CreateBook extends Component {
         <BookForm
           name={name}
           author={author}
+          Action={'New Book'}
           isbn={isbn}
           onSubmit={this.handleSubmit}
           onChange={this.handleOnChange}
