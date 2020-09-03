@@ -1,7 +1,7 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
 
-const BookForm = ({ name, isbn, author, onChange, onSubmit, Action }) => (
+const AuthorForm = ({ first_name, last_name, onChange, onSubmit, Action }) => (
   <MDBContainer>
     <MDBRow>
       <MDBCol className="container fls" md="4">
@@ -11,42 +11,29 @@ const BookForm = ({ name, isbn, author, onChange, onSubmit, Action }) => (
         >
           <p className="h4 text-center mb-4">{Action}</p>
 
-          <label htmlFor="defaultFormBookNameEx" className="grey-text">
-            Book Name
+          <label htmlFor="defaultFormFirstNameEx" className="grey-text">
+            First Name
           </label>
           <input
             type="text"
             required
-            name="name"
+            name="first_name"
             className="form-control"
-            value={name}
+            value={first_name}
             onChange={onChange}
           />
 
           <br />
 
-          <label htmlFor="defaultFormAuthorIDEx" className="grey-text">
-            Author ID
+          <label htmlFor="defaultFormLastNameEx" className="grey-text">
+            Last Name
           </label>
           <input
             type="text"
             required
-            name="author"
+            name="last_name"
             className="form-control"
-            value={author}
-            onChange={onChange}
-          />
-          <br />
-
-          <label htmlFor="defaultFormISBNEx" className="grey-text">
-            ISBN
-          </label>
-          <input
-            type="text"
-            name="isbn"
-            required
-            className="form-control"
-            value={isbn}
+            value={last_name}
             onChange={onChange}
           />
 
@@ -61,4 +48,4 @@ const BookForm = ({ name, isbn, author, onChange, onSubmit, Action }) => (
   </MDBContainer>
 );
 
-export default BookForm;
+export default AuthorForm;

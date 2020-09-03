@@ -13,8 +13,8 @@ const Card = (props) => {
       <MDBCol>
         <MDBCard style={{ width: "20rem" }}>
           <MDBCardBody>
-            <MDBCardTitle>{props.name}</MDBCardTitle>
-            <Link to={`/${props.book}`}>View</Link>
+            <MDBCardTitle>{props.prop1}</MDBCardTitle>
+            <Link to={`/${props.prop3}/${props.prop2}`}>View</Link>
           </MDBCardBody>
         </MDBCard>
       </MDBCol>

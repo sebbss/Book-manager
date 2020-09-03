@@ -3,21 +3,21 @@ import axios from 'axios'
 import Card from './Card';
 
 
-class BookList extends Component {
+class AuthorList extends Component {
     state = {
-        books:[],
+        authors:[],
         loading:true
     }
 
 
     componentDidMount() {
-        this.getBooks();
+        this.getAuthors();
       }
 
-    getBooks = () =>{
-        axios.get(`http://127.0.0.1:8000/books/`)
+    getAuthors = () =>{
+        axios.get(`http://127.0.0.1:8000/authors/`)
         .then(res =>{
-            this.setState({books:res.data.books, loading:false})
+            this.setState({authors:res.data.authors, loading:false})
         })
         .catch(e => {
             console.log(e);
@@ -25,16 +25,15 @@ class BookList extends Component {
     }
 
     render() {
-        const {books, loading} = this.state
-        console.log(books)
+        const {authors, loading} = this.state;
 
         return (
             <div className='container'>
                 {loading? <h1>Loading...</h1> 
                 :(
                     <div className='row align-items-center'>
-                {books.map(book =>(
-                    <div key={book.pk} className='col-4'><Card prop1={book.name} prop2={book.pk} prop3={'books'}/></div>
+                {authors.map(author =>(
+                    <div key={author.pk} className='col-4'><Card prop1={author.first_name} prop2={author.pk} prop3={'authors'}/></div>
                     
                 ))}
                 </div>
@@ -45,4 +44,4 @@ class BookList extends Component {
     }
 }
 
-export default BookList
+export default AuthorList
