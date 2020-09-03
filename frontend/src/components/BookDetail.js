@@ -41,7 +41,7 @@ class BookDetail extends Component {
                   by {book.author.first_name} {book.author.last_name}
                 </p>
                 <p className="card-text">ISBN : {book.isbn}</p>
-                <a href={`/update/${book.pk}`} className="btn btn-primary">Update Book</a>
+                <a href={`/books/update/${book.pk}`} className="btn btn-primary">Update Book</a>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>

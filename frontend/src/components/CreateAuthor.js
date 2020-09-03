@@ -17,7 +17,7 @@ export class CreateAuthor extends Component {
     axios.post(`http://127.0.0.1:8000/authors/`, data)
     .then((res) => {
       toast.success('added an author')
-      history.push(`/`)
+      history.push(`/authors`)
     })
     .catch(error =>{
         const data = JSON.parse(error.request.response)

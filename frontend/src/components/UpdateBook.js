@@ -33,8 +33,8 @@ export class UpdateBook extends Component {
     axios
       .put(`http://127.0.0.1:8000/books/${id}/update`, data)
       .then((res) => {
-        toast.success("added a book");
-        history.push(`/${res.data.pk}`);
+        toast.success("updated a book");
+        history.push(`/books/${res.data.pk}`);
       })
       .catch((error) => {
         const data = JSON.parse(error.request.response);
