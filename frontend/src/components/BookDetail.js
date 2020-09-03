@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
 import {
-  MDBBtn,
   MDBCard,
   MDBCardBody,
-  MDBCardImage,
   MDBCardTitle,
   MDBCol,
 } from "mdbreact";
 
-export class BookDetail extends Component {
+class BookDetail extends Component {
   state = {
     book: {},
     loading: true,

@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import {
   Route, BrowserRouter, Switch,
-} from 'react-router-dom';
+} 
+from 'react-router-dom';
 import BookList from './components/BookList';
 import BookDetail from './components/BookDetail';
-import { NavBar } from './components/NavBar';
+import NavBar  from './components/NavBar';
+import CreateBook from './components/CreateBook'
 
 
 export class Routes extends Component {
@@ -14,9 +16,9 @@ export class Routes extends Component {
           <div>
             <NavBar/>
             <Switch>
+              <Route path="/add-book" component={CreateBook}/>
               <Route path="/:id" component={BookDetail} />
               <Route exact path="/" component={BookList} />
-              
             </Switch>
           </div>
         </BrowserRouter>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import MDBRow from 'mdbreact'
 import Card from './Card';
 
 
@@ -31,12 +30,16 @@ class BookList extends Component {
 
         return (
             <div className='container'>
-                <div className='row align-items-center'>
+                {loading? <h1>Loading...</h1> 
+                :(
+                    <div className='row align-items-center'>
                 {books.map(book =>(
                     <div key={book.pk} className='col-4'><Card name={book.name} book={book.pk} /></div>
                     
                 ))}
                 </div>
+                )}
+                
             </div>
         )
     }
