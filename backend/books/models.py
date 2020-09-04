@@ -10,20 +10,5 @@ class Book(models.Model):
 
     def __str__(self):
         return self.name
-    
-    def create_book(self, name, isbn, author):
-
-        if name is None:
-            raise TypeError('Must enter name')
-
-        if isbn is None:
-            raise TypeError('Must enter isbn')
-
-        if author is None:
-            raise TypeError('Must enter author')
-
-        book = self.model(name=name, isbn=isbn, book=book, author=author)
-        book.save()
-        return book
 
         
