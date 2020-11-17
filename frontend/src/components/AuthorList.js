@@ -15,7 +15,7 @@ class AuthorList extends Component {
       }
 
     getAuthors = () =>{
-        axios.get(`http://127.0.0.1:8000/authors/`)
+        axios.get(`https://book-manager-backend.herokuapp.com/authors/`)
         .then(res =>{
             this.setState({authors:res.data.authors, loading:false})
         })

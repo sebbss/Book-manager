@@ -23,7 +23,7 @@ class BookDetail extends Component {
   }
 
   getSingleBook = (bookId) => {
-    axios.get(`http://127.0.0.1:8000/books/${bookId}`).then((res) => {
+    axios.get(`https://book-manager-backend.herokuapp.com/books/${bookId}`).then((res) => {
       this.setState({ book: res.data, loading: false });
     });
   };

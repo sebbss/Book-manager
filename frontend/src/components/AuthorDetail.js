@@ -25,7 +25,7 @@ export class AuthorDetail extends Component {
   }
 
   getSingleAuthor = (authorId) => {
-    axios.get(`http://127.0.0.1:8000/authors/${authorId}`).then((res) => {
+    axios.get(`https://book-manager-backend.herokuapp.com/authors/${authorId}`).then((res) => {
       this.setState({ author: res.data, loading: false });
     });
   };

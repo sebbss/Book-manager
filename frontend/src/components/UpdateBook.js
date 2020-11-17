@@ -22,7 +22,7 @@ export class UpdateBook extends Component {
   }
 
   getSingleBook = (bookId) => {
-    axios.get(`http://127.0.0.1:8000/books/${bookId}`).then((res) => {
+    axios.get(`https://book-manager-backend.herokuapp.com/books/${bookId}`).then((res) => {
       this.setState({ name: res.data.name, isbn:res.data.isbn, author:res.data.author.pk, loading:false });
     });
   };
@@ -31,7 +31,7 @@ export class UpdateBook extends Component {
     const { history, match:{params:{id}} } = this.props;
 
     axios
-      .put(`http://127.0.0.1:8000/books/${id}/update`, data)
+      .put(`https://book-manager-backend.herokuapp.com/books/${id}/update`, data)
       .then((res) => {
         toast.success("updated a book");
         history.push(`/books/${res.data.pk}`);
