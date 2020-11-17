@@ -15,7 +15,7 @@ class BookList extends Component {
       }
 
     getBooks = () =>{
-        axios.get(`http://127.0.0.1:8000/books/`)
+        axios.get(`https://book-manager-backend.herokuapp.com/books/`)
         .then(res =>{
             this.setState({books:res.data.books, loading:false})
         })

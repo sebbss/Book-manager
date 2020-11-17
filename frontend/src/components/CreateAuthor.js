@@ -14,7 +14,7 @@ export class CreateAuthor extends Component {
 
   postAuthor = (data) => {
     const {history} = this.props
-    axios.post(`http://127.0.0.1:8000/authors/`, data)
+    axios.post(`https://book-manager-backend.herokuapp.com/authors/`, data)
     .then((res) => {
       toast.success('added an author')
       history.push(`/authors`)

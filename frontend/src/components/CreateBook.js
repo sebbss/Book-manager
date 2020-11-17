@@ -15,10 +15,10 @@ export class CreateBook extends Component {
 
   postBook = (data) => {
     const {history} = this.props
-    axios.post(`http://127.0.0.1:8000/books/`, data)
+    axios.post(`https://book-manager-backend.herokuapp.com/books/`, data)
     .then((res) => {
       toast.success('added a book')
-      history.push(`/${res.data.pk}`)
+      history.push(`/books/${res.data.pk}`)
     })
     .catch(error =>{
         const data = JSON.parse(error.request.response)
