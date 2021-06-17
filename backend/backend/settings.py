@@ -25,7 +25,7 @@ SECRET_KEY = '!iet5q*4bt0(n)te#8ou1@4j@vjs#1*mjmj#2rnikmuwdfnav$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['book-manager-backend.herokuapp.com', '127.0.0.1', '0.0.0.0']
+ALLOWED_HOSTS = ['book-manager-backend.herokuapp.com', '127.0.0.1', '0.0.0.0', ['*']]
 
 
 # Application definition
